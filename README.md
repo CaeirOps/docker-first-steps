@@ -1,6 +1,6 @@
 # Primeiros passos com Docker
 
-Neste post iremos abordar o tema containers Docker, apesar do termo container ter se popularizado nos dias de hoje com a ferramenta Docker, o conceito já era empregado com utilizações de containers Linux e muitos casos de containers Java (JVM) principalmente para aplicações web, como utilizado nas plataformas JBoss e Wildfly.
+Apesar do termo container ter se popularizado nos dias de hoje com a ferramenta Docker, o conceito já era empregado com utilizações de containers Linux e muitos casos de containers Java (JVM) principalmente para aplicações web, como utilizado nas plataformas JBoss e Wildfly.
 
 ## Surgimento
 
@@ -9,7 +9,11 @@ Originalmente o Docker surgiu em 2013 quando Solomon Hykes, fundador e CEO da do
 ## Benefícios
 
 Inicialmente é muito comum que o conceito do Docker seja confundido com o de máquinas virtuais devido à cultura e metodologia de trabalho utilizada durante anos, porém o Docker é muito mais que um provisionamento virtual e com proposta bem diferente. Enquanto uma máquina virtual é feita para perdurar durante um bom tempo, mesmo que a fluidez de provisionamento seja rápido e que se utilize de plataformas em cloud para criar e deletar máquinas, o container Docker já nasce com o propósito de ser substituível em um certo momento, em um novo deploy ou até mesmo em minutos após a execução de uma única tarefa.
-Justamente essa volatilidade do container o faz eficaz, pois com o Docker você não precisa se preocupar com bibliotecas do sistema operacional, drivers, partições e etc, o Docker possui um repositório de imagens públicas em cloud, o DockerHub, em que é possível criar um container quase que instantaneamente através do comando “docker run” e dizendo qual imagem Docker este container deve utilizar para realizar o setup. Existem diversas imagens enxutas desde sistemas operacionais contento somente o mínimo necessário para uma aplicação ser executada, até imagens com serviços já instalados para serem utilizados como o caso da imagem “httpd:2.4” que traz um sistema operacional Linux Alpine com o serviço Apache HTTP instalado.
+
+Justamente essa volatilidade do container o faz eficaz, pois com o Docker você não precisa se preocupar com bibliotecas do sistema operacional, drivers, partições e etc, o Docker possui um repositório de imagens públicas em cloud, o DockerHub, em que é possível criar um container quase que instantaneamente através do comando “docker run” e dizendo qual imagem Docker este container deve utilizar para realizar o setup. 
+
+Existem diversas imagens enxutas desde sistemas operacionais contento somente o mínimo necessário para uma aplicação ser executada, até imagens com serviços já instalados para serem utilizados como o caso da imagem “httpd:2.4” que traz um sistema operacional Linux Alpine com o serviço Apache HTTP instalado.
+
 Este tipo de funcionalidade traz fluidez e agilidade para os processos de deploy, porém deve ser levado em consideração que aplicações que serão aplicadas em containers já devem ser estruturadas com o conceito “stateless”, que não guarda o estado da aplicação e nem dados dentro do container, pois caso contrário inviabilizaria uma das principais vantagens da utilização do Docker que é a versatilidade para de se encerrar o container em caso de problemas ou novas atualizações na aplicação.
  
 ## Exemplos de implantação
@@ -18,7 +22,7 @@ O primeiro passo para a utilização é realizarmos a instalação do Docker, pa
 
 ### Pré-Requisitos:
 
-Neste exemplo usaremos apenas o sistema operacional Linux Ubuntu, antes de iniciar a instalação certifique-se de ter permissão de super usuário, será necessário adicionar o repositório do Docker em seu sistema operacional para realizar o download do pacote, para isso execute a sequência de comandos a seguir:
+Antes de iniciar a instalação certifique-se de ter permissão de super usuário, será necessário adicionar o repositório do Docker em seu sistema operacional para realizar o download do pacote, para isso execute a sequência de comandos a seguir:
 
 1. Atualizando da lista de pacotes do repositório atual:
 
