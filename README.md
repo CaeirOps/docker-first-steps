@@ -112,12 +112,13 @@ EOF
 3. Agora no mesmo diretório que estamos, crie um arquivo chamado “requisitos.txt” com o conteúdo abaixo que será utilizado para informar os pacotes adicionais:
 
 ```
-Flask
+echo Flask > requisitos.txt
 ```
  
-4. Criaremos agora o arquivo de nossa aplicação Python, assim continuando no mesmo diretório crie um arquivo com o nome de app.py com o seguinte conteúdo:
+4. Criaremos agora o arquivo de nossa aplicação Python, assim continuando no mesmo diretório criaremos um arquivo com o nome de app.py e vamos inserir novamente ao mesmo o seu conteúdo, assim digite na linha de comando o que está abaixo:
 
 ```
+cat << EOF > app.py
 from flask import Flask
 import os
 import socket
@@ -132,7 +133,10 @@ def hello():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
+EOF
 ```
+
+> Atenção para a endentação do código!.
     
 5. Tudo pronto para realizarmos a construção de nossa imagem. No comando a seguir iremos utilizar o parâmetro “-t” ou “--tag” que servirá para identificarmos a nossa imagem com um nome, apelido ou até mesmo versão. Caso a versão de build não seja informada neste parâmetro o Docker assumirá por padrão que é a última (latest).  Ao final do comando também deveremos informar o contexto do Dockerfile, em nosso caso o mesmo diretório em que estamos trabalhando, representado no Linux pelo caracter “.”, veja:
 
