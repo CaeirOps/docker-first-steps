@@ -76,9 +76,16 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 Nesta etapa faremos o build de uma aplicação para gerar uma imagem de container que será executada posterirormente para simularmos um deploy. Para isso iremos utilizar um componente do chamado Dockerfile, um arquivo de configuração que irá nos auxiliar no build, contendo informações como imagem de referência, arquivos e serem copiados e pacotes adicionais para dependências da aplicação para a construção da imagem do container. Siga os passos abaixo:
 
-1. Crie um diretório qualquer para utilizarmos na construção da imagem, após entre neste diretório e crie um arquivo com nome “Dockerfile” com o seguinte conteúdo:
+1. Crie um diretório qualquer para utilizarmos na construção da imagem, após isso entre neste diretório como no exemplo:
 
 ```
+mkdir docker-lab ; cd docker-lab
+```
+
+2. Agora vamos criar um arquivo com nome “Dockerfile” e inserir automaticamente o seu conteúdo, para isso digite na linha de comando o que está abaixo:
+
+```
+cat << EOF > Dockerfile
 # Imagem de referência Python
 FROM python:3.7-slim
 
@@ -99,15 +106,16 @@ ENV NAME World
 
 # Executando aplicação Python após inicialização do container
 CMD ["python", "app.py"]
+EOF
 ```
 
-2. Agora no mesmo diretório que estamos, crie um arquivo chamado “requisitos.txt” com o conteúdo abaixo que será utilizado para informar os pacotes adicionais:
+3. Agora no mesmo diretório que estamos, crie um arquivo chamado “requisitos.txt” com o conteúdo abaixo que será utilizado para informar os pacotes adicionais:
 
 ```
 Flask
 ```
  
-3. Criaremos agora o arquivo de nossa aplicação Python, assim continuando no mesmo diretório crie um arquivo com o nome de app.py com o seguinte conteúdo:
+4. Criaremos agora o arquivo de nossa aplicação Python, assim continuando no mesmo diretório crie um arquivo com o nome de app.py com o seguinte conteúdo:
 
 ```
 from flask import Flask
@@ -126,7 +134,7 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
 ```
     
-4. Tudo pronto para realizarmos a construção de nossa imagem. No comando a seguir iremos utilizar o parâmetro “-t” ou “--tag” que servirá para identificarmos a nossa imagem com um nome, apelido ou até mesmo versão. Caso a versão de build não seja informada neste parâmetro o Docker assumirá por padrão que é a última (latest).  Ao final do comando também deveremos informar o contexto do Dockerfile, em nosso caso o mesmo diretório em que estamos trabalhando, representado no Linux pelo caracter “.”, veja:
+5. Tudo pronto para realizarmos a construção de nossa imagem. No comando a seguir iremos utilizar o parâmetro “-t” ou “--tag” que servirá para identificarmos a nossa imagem com um nome, apelido ou até mesmo versão. Caso a versão de build não seja informada neste parâmetro o Docker assumirá por padrão que é a última (latest).  Ao final do comando também deveremos informar o contexto do Dockerfile, em nosso caso o mesmo diretório em que estamos trabalhando, representado no Linux pelo caracter “.”, veja:
 
 ```
 sudo docker build --tag=testpy .
