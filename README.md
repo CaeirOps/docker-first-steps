@@ -109,7 +109,7 @@ CMD ["python", "app.py"]
 EOF
 ```
 
-3. Agora no mesmo diretório que estamos, crie um arquivo chamado “requisitos.txt” com o conteúdo abaixo que será utilizado para informar os pacotes adicionais:
+3. Agora no mesmo diretório que estamos, crie um arquivo chamado “requisitos.txt” com o conteúdo Flask que será utilizado para informar os pacotes adicionais como no exemplo:
 
 ```
 echo Flask > requisitos.txt
@@ -136,7 +136,7 @@ if __name__ == "__main__":
 EOF
 ```
 
-> Atenção para a endentação do código!.
+> Atenção para a endentação do código!
     
 5. Tudo pronto para realizarmos a construção de nossa imagem. No comando a seguir iremos utilizar o parâmetro “-t” ou “--tag” que servirá para identificarmos a nossa imagem com um nome, apelido ou até mesmo versão. Caso a versão de build não seja informada neste parâmetro o Docker assumirá por padrão que é a última (latest).  Ao final do comando também deveremos informar o contexto do Dockerfile, em nosso caso o mesmo diretório em que estamos trabalhando, representado no Linux pelo caracter “.”, veja:
 
