@@ -115,7 +115,7 @@ EOF
 echo Flask > requisitos.txt
 ```
  
-4. Criaremos agora o arquivo de nossa aplicação Python, assim continuando no mesmo diretório criaremos um arquivo com o nome de app.py e vamos inserir novamente ao mesmo o seu conteúdo, assim digite na linha de comando o que está abaixo:
+4. Criaremos agora o arquivo de nossa aplicação Python, assim continuando no mesmo diretório criaremos um arquivo com o nome de app.py e vamos inserir novamente ao mesmo tempo o seu conteúdo, assim digite na linha de comando o que está abaixo:
 
 ```
 cat << EOF > app.py
