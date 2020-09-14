@@ -74,7 +74,7 @@ $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 ### Build da imagem:
 
-Nesta etapa faremos o build de uma aplicação para gerar uma imagem de container que será executada posterirormente para simularmos um deploy. Para isso iremos utilizar um componente do chamado Dockerfile, um arquivo de configuração que irá nos auxiliar no build, contendo informações como imagem de referência, arquivos e serem copiados e pacotes adicionais para dependências da aplicação para a construção da imagem do container. Siga os passos abaixo:
+Nesta etapa faremos o build de uma aplicação para gerar uma imagem de container que será executada posterirormente para simularmos um deploy. Para isso iremos utilizar um componente do Docker chamado Dockerfile, um arquivo de configuração que irá nos auxiliar no build, contendo informações como imagem de referência, arquivos a serem copiados e pacotes adicionais para dependências da aplicação para a construção da imagem do container. Siga os passos abaixo:
 
 1. Crie um diretório qualquer para utilizarmos na construção da imagem, após isso entre neste diretório como no exemplo:
 
